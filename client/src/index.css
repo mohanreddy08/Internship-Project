@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+/* Print Styles for Digital Passes */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-pass-container,
+  .print-pass-container * {
+    visibility: visible;
+  }
+  .print-pass-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    box-shadow: none !important;
+    border: 2px dashed #6366f1 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
